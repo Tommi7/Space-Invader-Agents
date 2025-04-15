@@ -1,14 +1,14 @@
 # Space Invader Agents
 
-Dit project bevat meerdere space invador agents en video omgeving. Je kunt 
+Dit project bevat een space invador agent en een video omgeving waarmee met reinforcement learning space invador word gespeeld.
 
 ### Inhoud
 
-- agents.py: Bevat de agents:
+- agents.py: Bevat de agent:
   - Agent 1: 
-  - Agent 2: 
-- main.py: Laat je een interactief spel spelen tegen de agent.
-- 
+- train.py: Laat je een interactief spel spelen tegen de agent.
+- env.py:
+- utils.py: 
 
 ### Installatie
 
