@@ -12,6 +12,7 @@ class SpaceInvadersEnv:
             bins: Het aantal bins voor elke dimensie van de state.
         """
         self.env = gym.make("ALE/SpaceInvaders-v5")
+
         self.bins = bins
 
     def reset(self):
