@@ -3,7 +3,9 @@ from ale_py import ALEInterface
 from src.env import SpaceInvadersEnv
 from src.agents import QLearningAgent, RandomAgent
 
-def train_agent(n_episodes=500, bins=10, use_random=False):
+def train_agent(n_episodes=500, bins=10, use_random=False,
+                alpha=0.1, gamma=0.99, epsilon=1.0,
+                epsilon_decay=0.995, min_epsilon=0.1):
     """
     Train de RL-agent op de SpaceInvaders-omgeving.
     
@@ -19,7 +21,15 @@ def train_agent(n_episodes=500, bins=10, use_random=False):
     if use_random:
         agent = RandomAgent(env.action_space)
     else:
-        agent = QLearningAgent(env.action_space, state_bins=bins)
+        agent = agent = QLearningAgent(
+                env.action_space,
+                state_bins=bins,
+                alpha=alpha,
+                gamma=gamma,
+                epsilon=epsilon,
+                epsilon_decay=epsilon_decay,
+                min_epsilon=min_epsilon
+                )
     
     rewards_per_episode = []
 
