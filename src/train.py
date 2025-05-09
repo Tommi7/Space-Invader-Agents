@@ -11,8 +11,8 @@ def train_agent(n_episodes=500, bins=10, use_random=False,
     
     Parameters:
         n_episodes: Aantal episodes om te trainen.
-        bins: Aantal bins voor discretisatie van de state.
-        use_random: Indien True wordt de RandomAgent gebruikt als baseline.
+        bins: Aantal bins.
+        use_random: Als True wordt de RandomAgent gebruikt als baseline.
         
     Returns:
         Een tuple bestaande uit (rewards_per_episode, agent)
@@ -56,7 +56,6 @@ if __name__ == "__main__":
     episodes = 500
     rewards, agent = train_agent(n_episodes=episodes, bins=10, use_random=False)
     
-    # Visualiseer de resultaten: total reward per episode
     plt.plot(rewards)
     plt.xlabel("Episode")
     plt.ylabel("Total Reward")

@@ -1,4 +1,3 @@
-# agents.py
 import numpy as np
 
 class QLearningAgent:
@@ -21,7 +20,7 @@ class QLearningAgent:
         self.epsilon = epsilon
         self.epsilon_decay = epsilon_decay
         self.min_epsilon = min_epsilon
-        self.q_table = {}  # Q-table: mapping van discrete staten (als tuple) naar een numpy-array van actiewaarden
+        self.q_table = {}  
         self.state_bins = state_bins
 
     def get_discrete_state(self, state):
@@ -39,9 +38,9 @@ class QLearningAgent:
             self.q_table[discrete_state] = np.zeros(self.action_space.n)
 
         if np.random.rand() < self.epsilon:
-            return self.action_space.sample()  # Exploratie: willekeurige actie
+            return self.action_space.sample() 
         else:
-            return int(np.argmax(self.q_table[discrete_state]))  # Exploitatie: beste bekende actie
+            return int(np.argmax(self.q_table[discrete_state])) 
 
     def update(self, state, action, reward, next_state, done):
         """
